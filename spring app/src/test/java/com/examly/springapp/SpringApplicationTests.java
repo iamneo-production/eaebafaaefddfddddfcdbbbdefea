@@ -10,7 +10,7 @@ public class Assignment1 {
 
 	// Creating an instance of Firefox Browser
 	FirefoxDriver driver;
-	String qatechhubUrl = "http://qatechhub.com";
+	String qatechhubUrl = "http://iamneo.ai";
 	String facebookUrl = "https://www.facebook.com";
 
 	@Test(priority=0)
@@ -28,7 +28,7 @@ public class Assignment1 {
 
 		String titleOfThePage = driver.getTitle();
 		
-		Assert.assertEquals(titleOfThePage, "QA Automation Tools Trainings and Tutorials | QA Tech Hub");
+		Assert.assertEquals(titleOfThePage, "We are Hiring!");
 
 	}
 
