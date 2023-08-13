@@ -10,7 +10,7 @@ public class Assignment1 {
 
 	// Creating an instance of Firefox Browser
 	FirefoxDriver driver;
-	String qatechhubUrl = "http://iamneo.ai";
+	String  iamneoUrl = "http://iamneo.ai";
 	String facebookUrl = "https://www.facebook.com";
 
 	@Test(priority=0)
@@ -24,7 +24,7 @@ public class Assignment1 {
 
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
-		driver.get(qatechhubUrl);
+		driver.get( iamneoUrl);
 
 		String titleOfThePage = driver.getTitle();
 		
