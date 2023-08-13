@@ -1,32 +1,51 @@
-package com.examly.springapp;
+package assignments;
 
-import org.testng.annotations.Test;
-import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 
-public class SpringApplicationTests {
+public class Assignment1 {
 
-    ChromeOptions chromeOptions = new ChromeOptions();
-    WebDriver driver = null;
+	// Creating an instance of Firefox Browser
+	FirefoxDriver driver;
+	String qatechhubUrl = "http://qatechhub.com";
+	String facebookUrl = "https://www.facebook.com";
 
-    @BeforeTest
-    public void beforeTest() throws Exception
-     {
-   // replace seleniumhost and port with correct values
-        driver = new RemoteWebDriver(new URL("http://<seleniumhost:port>/"), chromeOptions);
-        driver.manage().window().maximize();
-    }
+	@Test(priority=0)
+	public void invokeBrowser() {
 
-    @AfterTest
-    public void afterTest() 
-    {
-        driver.quit();
-    }
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\Users\\Saurabh Dhingra\\workspace\\libs\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+		driver = new FirefoxDriver();
+
+		driver.manage().window().maximize();
+
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+
+		driver.get(qatechhubUrl);
+
+		String titleOfThePage = driver.getTitle();
+		
+		Assert.assertEquals(titleOfThePage, "QA Automation Tools Trainings and Tutorials | QA Tech Hub");
+
+	}
+
+	@Test(priority= 1)
+	public void navigateCommands() {
+		driver.navigate().to(facebookUrl);
+
+		String currentUrl = driver.getCurrentUrl();
+
+		System.out.println("Current URL :: " + currentUrl);
+		driver.navigate().back();
+
+		driver.navigate().forward();
+
+		driver.navigate().refresh();
+
+                driver.quit();
+	}
 
 }
