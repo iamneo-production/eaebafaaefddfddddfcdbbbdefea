@@ -14,7 +14,7 @@ public class Assignment1 {
 	public void invokeBrowser() {
 
 		System.setProperty("webdriver.gecko.driver",
-				"C:\\Users\\Saurabh Dhingra\\workspace\\libs\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+				"C:\\Users\\ADMIN\\Desktop\\virtusa assignment1\\Virtusa\\geckodriver.exe");
 		driver = new FirefoxDriver();
 
 		driver.manage().window().maximize();
