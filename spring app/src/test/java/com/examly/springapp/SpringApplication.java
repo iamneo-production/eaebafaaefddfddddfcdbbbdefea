@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
-public class springapp{
+public class SpringApplication{
 
 	// Creating an instance of Firefox Browser
 	FirefoxDriver driver;
